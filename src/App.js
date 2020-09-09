@@ -13,8 +13,8 @@ function App() {
   //const [successfulLaunch, setSuccessfulLaunch] = useState(false)
 
   const apiUrl = `https://api.spacexdata.com/v3/launches?limit=100`;  
-  const getData = async(url) =>{
-    const result = await Axios.get(url) 
+  const getData = async(apiUrl) =>{
+    const result = await Axios.get(apiUrl) 
     //setApiData(result)
     setLaunches(result.data)
     return result;
