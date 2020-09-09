@@ -7,9 +7,9 @@ import './App.css'
 function App() {
   
   const [launches, setLaunches] = useState([])
-  const [successfulLanding, setSuccessfulLanding] = useState(false)
+  //const [successfulLanding, setSuccessfulLanding] = useState(false)
   const [apiUrl, setApiUrl] = useState(`https://api.spacexdata.com/v3/launches?limit=100`)
-  const [successfulLaunch, setSuccessfulLaunch] = useState(false)
+  //const [successfulLaunch, setSuccessfulLaunch] = useState(false)
 
   const getData = async(apiUrl) =>{
     const result = await Axios.get(apiUrl) 
@@ -19,14 +19,15 @@ function App() {
 
 
   const onChangeSuccessfulLanding = (e) =>{
-    setSuccessfulLanding(e)
-    setApiUrl(`https://api.spacexdata.com/v3/launches?limit=100&land_success=${successfulLanding}`)
+    //setSuccessfulLanding(e)
+    setApiUrl(`https://api.spacexdata.com/v3/launches?limit=100&land_success=${e}`)
     
   }
 
   const onChangeSuccessfulLaunch = (e) =>{
-    setSuccessfulLaunch(e)
-    setApiUrl(`https://api.spacexdata.com/v3/launches?limit=100&successfulLaunch=${successfulLaunch}`)
+    //setSuccessfulLaunch(e)
+    //console.log('setSuccessfulLaunch  --- e', e)
+    setApiUrl(`https://api.spacexdata.com/v3/launches?limit=100&launch_success=${e}`)
     
   }
 
