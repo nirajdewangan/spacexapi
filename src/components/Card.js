@@ -2,11 +2,8 @@ import React from "react";
 
 export default function Card({ launche }) {
   const { mission_name, flight_number, links, mission_id, launch_year, launch_success, rocket } = launche;
-  if(rocket.first_stage.cores.pop()) {
-    //console.log(rocket.first_stage.cores.pop())
-  }
-  console.log("mkmkmkm",rocket.first_stage.cores[rocket.first_stage.cores.length -1])
-  console.log('launch_success', launch_success)
+  const landSuccessVal = rocket.first_stage.cores[rocket.first_stage.cores.length-1] ? rocket.first_stage.cores[rocket.first_stage.cores.length-1].land_success : ''
+  console.log('landSuccessVal', landSuccessVal)
   
   return (
     <>
@@ -32,7 +29,8 @@ export default function Card({ launche }) {
             </ul>
             <p className="card-text"><b>Launch Year:</b> {launch_year}</p>
             <p className="card-text"><b>Successful Launch:</b> {launch_success === true ? 'True': 'False'}</p>
-            <p className="card-text"><b>Successful Landing:</b>  {!rocket.first_stage.cores[rocket.first_stage.cores.length -1]?.land_success ? 'False': 'True'} </p>
+            <p className="card-text"><b>Successful Landing:</b>  
+            {!!landSuccessVal ? 'True': 'False'} </p>
             
           </div>
         </div>
