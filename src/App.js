@@ -34,7 +34,7 @@ function App() {
   
   useEffect( () => {
     getData(apiUrl)
-  }, [])
+  }, [apiUrl])
 
 
   return (
