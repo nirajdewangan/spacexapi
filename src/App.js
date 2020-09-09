@@ -13,7 +13,8 @@ function App() {
   const [year, setYear] = useState('')
 
   const getData = async() =>{
-    const urlfull = `https://api.spacexdata.com/v3/launches?limit=100&land_success=${successfulLanding}&launch_success=${successfulLaunch}&launch_year=${year}`;
+    const urlfull = `https://api.spacexdata.com/v3/launches?limit=100&launch_success=${successfulLanding}&land_success=${successfulLaunch}&launch_year=`
+//https://api.spacexdata.com/v3/launches?limit=100&land_success=${successfulLanding}&launch_success=${successfulLaunch}&launch_year=${year}`;
     const result = await Axios.get(urlfull) 
     setLaunches(result.data)
     return result;
