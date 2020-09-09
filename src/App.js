@@ -22,10 +22,13 @@ function App() {
 
 
   const onChangeSuccessfulLanding = (e) =>{
-    //e.preventDefault();
-    //console.log(e.target.value())
-    //return 1
-    console.log(e)
+    setSuccessfulLanding(e)
+    
+  }
+
+  const onChangeSuccessfulLaunch = (e) =>{
+    setSuccessfulLaunch(e)
+    
   }
   
   useEffect( () => {
