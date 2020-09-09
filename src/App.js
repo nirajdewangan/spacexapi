@@ -24,13 +24,13 @@ function App() {
   const onChangeSuccessfulLanding = (e) =>{
     setSuccessfulLanding(e)
     
-    
+
   }
 
-  const onChangeSuccessfulLaunch = (e) =>{
-    setSuccessfulLaunch(e)
+  // const onChangeSuccessfulLaunch = (e) =>{
+  //   setSuccessfulLaunch(e)
     
-  }
+  // }
   
   useEffect( () => {
     getData(apiUrl)
