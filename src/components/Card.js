@@ -31,7 +31,7 @@ export default function Card({ launche }) {
             </ul>
             <p className="card-text"><b>Launch Year:</b> {launch_year}</p>
             <p className="card-text"><b>Successful Launch:</b> {launch_success === true ? 'True': 'False'}</p>
-            <p className="card-text"><b>Successful Landing:</b>  {!rocket.first_stage.cores[rocket.first_stage.cores.length -1].land_success ? 'False': 'True'} </p>
+            <p className="card-text"><b>Successful Landing:</b>  {!rocket.first_stage.cores[rocket.first_stage.cores.length -1]?.land_success ? 'False': 'True'} </p>
             
           </div>
         </div>
