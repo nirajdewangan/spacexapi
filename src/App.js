@@ -8,13 +8,13 @@ function App() {
   
   const [launches, setLaunches] = useState([])
   const [successfulLanding, setSuccessfulLanding] = useState(false)
-  const [apiUrl, setApiUrl] = useState(`https://api.spacexdata.com/v3/launches?limit=100`)
+  //const [apiUrl, setApiUrl] = useState(`https://api.spacexdata.com/v3/launches?limit=100`)
   const [successfulLaunch, setSuccessfulLaunch] = useState(false)
   const [year, setYear] = useState('')
 
   const getData = async() =>{
     const urlfull = `https://api.spacexdata.com/v3/launches?limit=100&land_success=${successfulLanding}&launch_success=${successfulLaunch}&launch_year=${year}`;
-    const result = await Axios.get(apiUrl) 
+    const result = await Axios.get(urlfull) 
     setLaunches(result.data)
     return result;
   }
