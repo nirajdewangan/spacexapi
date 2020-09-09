@@ -20,13 +20,13 @@ function App() {
 
   const onChangeSuccessfulLanding = (e) =>{
     setSuccessfulLanding(e)
-    setApiUrl(`https://api.spacexdata.com/v3/launches?limit=100`)
+    setApiUrl(`https://api.spacexdata.com/v3/launches?limit=100&land_success=${successfulLanding}`)
     
   }
 
   const onChangeSuccessfulLaunch = (e) =>{
     setSuccessfulLaunch(e)
-    setApiUrl(`https://api.spacexdata.com/v3/launches?limit=100`)
+    setApiUrl(`https://api.spacexdata.com/v3/launches?limit=100&successfulLaunch=${successfulLaunch}`)
     
   }
 
