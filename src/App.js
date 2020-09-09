@@ -7,46 +7,38 @@ import './App.css'
 function App() {
   
   const [launches, setLaunches] = useState([])
-  const [successfulLanding, setSuccessfulLanding] = useState(false)
-  //const [apiUrl, setApiUrl] = useState(`https://api.spacexdata.com/v3/launches?limit=100`)
-  const [successfulLaunch, setSuccessfulLaunch] = useState(false)
-  const [year, setYear] = useState('')
+  //const [successfulLanding, setSuccessfulLanding] = useState(false)
+  const [apiUrl, setApiUrl] = useState(`https://api.spacexdata.com/v3/launches?limit=100`)
+  //const [successfulLaunch, setSuccessfulLaunch] = useState(false)
 
-  const getData = async() =>{
-    const urlfull = `https://api.spacexdata.com/v3/launches?limit=100&land_success=${successfulLanding}&launch_success=${successfulLaunch}&launch_year=${year}`;
-    const result = await Axios.get(urlfull) 
+  const getData = async(apiUrl) =>{
+    const result = await Axios.get(apiUrl) 
     setLaunches(result.data)
-    return result;
+    //return result;
   }
 
 
   const onChangeSuccessfulLanding = (e) =>{
-    setSuccessfulLanding(e)
-    //setApiUrl(`https://api.spacexdata.com/v3/launches?limit=100&land_success=${e}`)
+    //setSuccessfulLanding(e)
+    setApiUrl(`https://api.spacexdata.com/v3/launches?limit=100&land_success=${e}`)
     
   }
 
   const onChangeSuccessfulLaunch = (e) =>{
-    setSuccessfulLaunch(e)
+    //setSuccessfulLaunch(e)
     //console.log('setSuccessfulLaunch  --- e', e)
-    //setApiUrl(`https://api.spacexdata.com/v3/launches?limit=100&launch_success=${e}`)
+    setApiUrl(`https://api.spacexdata.com/v3/launches?limit=100&launch_success=${e}`)
     
   }
 
   const onChangeYear = (e) => {
-    setYear(e);
-    //setApiUrl(`https://api.spacexdata.com/v3/launches?limit=100&launch_year=${e}`)
+    setApiUrl(`https://api.spacexdata.com/v3/launches?limit=100&launch_year=${e}`)
   }
   
   useEffect( () => {
-    getData()
-  }, [])
-  
-  useEffect( () => {
-    getData()
-  }, [ successfulLaunch, successfulLanding, year ])
+    getData(apiUrl)
+  }, [apiUrl])
 
-  
 
   return (
     <div className="App">
