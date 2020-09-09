@@ -7,10 +7,10 @@ import './App.css'
 function App() {
   
   //const [apiData, setApiData] = useState({})
-  const [error, setError] = useState(false)
+  //const [error, setError] = useState(false)
   const [launches, setLaunches] = useState([])
   const [successfulLanding, setSuccessfulLanding] = useState(false)
-  const [successfulLaunch, setSuccessfulLaunch] = useState(false)
+  //const [successfulLaunch, setSuccessfulLaunch] = useState(false)
 
   const apiUrl = `https://api.spacexdata.com/v3/launches?limit=100`;  
   const getData = async(url) =>{
@@ -23,7 +23,7 @@ function App() {
 
   const onChangeSuccessfulLanding = (e) =>{
     setSuccessfulLanding(e)
-    
+    console.log(successfulLanding)
 
   }
 
