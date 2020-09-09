@@ -5,6 +5,7 @@ export default function Card({ launche }) {
   if(rocket.first_stage.cores.pop()) {
     //console.log(rocket.first_stage.cores.pop())
   }
+  console.log("mkmkmkm",rocket.first_stage.cores[rocket.first_stage.cores.length -1])
   console.log('launch_success', launch_success)
   
   return (
